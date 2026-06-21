@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Projects | Ajinkya Pawar</title>
+
+    <style>
+        body{
+            background-color:#000000;
+            color:#f9fafb;
+            font-family:Segoe UI, Arial, sans-serif;
+            margin:0;
+            padding:0;
+        }
+
+        .projects-page{
+            max-width:1600px;
+            margin:0 auto;
+            padding:40px 30px 60px 30px;
+        }
+
+        .projects-header{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .projects-header h1{
+            font-size:48px;
+            color:#ffffff;
+            margin-bottom:10px;
+        }
+
+        .projects-header p{
+            font-size:18px;
+            color:#d1d5db;
+            margin-top:0;
+        }
+
+        .projects-row{
+            display:flex;
+            gap:20px;
+            align-items:stretch;
+            flex-wrap:nowrap;
+            overflow-x:auto;
+            padding-bottom:10px;
+            scrollbar-width:none;
+            -ms-overflow-style:none;
+        }
+
+        .projects-row::-webkit-scrollbar{
+            display:none;
+        }
+
+        .project-card{
+            background-color:#111827;
+            border:1px solid #1f2937;
+            border-radius:16px;
+            overflow:hidden;
+            box-shadow:0 10px 30px rgba(0,0,0,0.35);
+            transition:transform 0.3s ease, box-shadow 0.3s ease;
+            flex:0 0 280px;
+            min-height:360px;
+            display:flex;
+            flex-direction:column;
+        }
+
+        .project-card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 14px 35px rgba(255,255,255,0.08);
+        }
+
+        .project-card img{
+            width:100%;
+            height:150px;
+            object-fit:cover;
+            display:block;
+        }
+
+        .project-content{
+            padding:15px;
+            display:flex;
+            flex-direction:column;
+            flex:1;
+        }
+
+        .project-content h2{
+            color:#ffffff;
+            font-size:20px;
+            margin-top:0;
+            margin-bottom:10px;
+            line-height:1.35;
+        }
+
+        .project-content p{
+            color:#d1d5db;
+            font-size:13px;
+            line-height:1.6;
+            margin-bottom:14px;
+            flex:1;
+        }
+
+        .project-links{
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+            margin-top:auto;
+        }
+
+        .project-links a{
+            text-decoration:none;
+        }
+
+        .project-button{
+            background:linear-gradient(135deg, #ffffff, #d1d5db);
+            color:#000000;
+            border:1px solid #e5e7eb;
+            padding:12px 18px;
+            border-radius:10px;
+            font-size:14px;
+            font-weight:600;
+            cursor:pointer;
+            transition:all 0.3s ease;
+            box-shadow:0 6px 18px rgba(255,255,255,0.18);
+            width:100%;
+        }
+
+        .project-button:hover{
+            background:linear-gradient(135deg, #ffffff, #d1d5db);
+            color:#000000;
+            transform:translateY(-2px);
+            box-shadow:0 8px 20px rgba(255,255,255,0.22);
+        }
+
+        .placeholder-text{
+            color:#9ca3af;
+            font-style:italic;
+        }
+
+        .back-home{
+            text-align:center;
+            margin-top:50px;
+        }
+
+        .back-home a{
+            text-decoration:none;
+        }
+
+        .back-home button{
+            background-color:transparent;
+            color:#ffffff;
+            border:1px solid #374151;
+            padding:12px 22px;
+            border-radius:10px;
+            font-size:15px;
+            cursor:pointer;
+        }
+
+        .back-home button:hover{
+            background-color:#111827;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="projects-page">
+
+        <div class="projects-header">
+            <h1>Projects</h1>
+            <p>A curated collection of machine learning, analytics, and data-focused projects.</p>
+        </div>
+
+        <div class="projects-row">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="project_images/sports_person_ss.png" alt="Sports Person Image Classification">
+
+                <div class="project-content">
+                    <h2>Sports Person Image Classification</h2>
+
+                    <p>
+                        A machine learning web application that identifies a sports personality from an uploaded image using computer vision and classification techniques.
+                    </p>
+
+                    <div class="project-links">
+                        <a href="https://sports-person-image-classifier.streamlit.app/" target="_blank">
+                            <button class="project-button">Open Live App</button>
+                        </a>
+
+                        <a href="https://github.com/ajinkyamspawar/sports-person-image-classifier" target="_blank">
+                            <button class="project-button">View GitHub Repo</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="project_images/Attrition_HomePage.png" alt="Employee Attrition Prediction">
+
+                <div class="project-content">
+                    <h2>Employee Attrition Prediction</h2>
+
+                    <p>
+                        A predictive analytics project that estimates whether an employee is likely to leave the company using machine learning techniques.
+                    </p>
+
+                    <div class="project-links">
+                        <a href="https://predicting-attrition.streamlit.app/" target="_blank">
+                            <button class="project-button">Open Live App</button>
+                        </a>
+
+                        <a href="https://github.com/ajinkyamspawar/Attrition_Prediction" target="_blank">
+                            <button class="project-button">View GitHub Repo</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="project_images/project_placeholder.png" alt="AI powered Credit Risk Intelligence Platform">
+
+                <div class="project-content">
+                    <h2>AI powered Credit Risk Intelligence Platform</h2>
+
+                    <p class="placeholder-text">
+                        Work in progress
+                    </p>
+
+                    <div class="project-links">
+                        <button class="project-button">App will be live soon</button>
+                        <button class="project-button">Coming Soon</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img src="project_images/project_placeholder.png" alt="Insurance Fraud Investigation Agent">
+
+                <div class="project-content">
+                    <h2>Insurance Fraud Investigation Agent</h2>
+
+                    <p class="placeholder-text">
+                        Work in progress
+                    </p>
+
+                    <div class="project-links">
+                        <button class="project-button">App will be live soon</button>
+                        <button class="project-button">Coming Soon</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <img src="project_images/project_placeholder.png" alt="AI Enabled Voice Assistant">
+
+                <div class="project-content">
+                    <h2>AI Enabled Voice Assistant</h2>
+
+                    <p class="placeholder-text">
+                        Work in Progress
+                    </p>
+
+                    <div class="project-links">
+                        <button class="project-button">App will be live soon</button>
+                        <button class="project-button">Coming Soon</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="back-home">
+            <a href="index.html">
+                <button>Back to Home</button>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

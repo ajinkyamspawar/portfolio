@@ -5,19 +5,19 @@
     <title>Ajinkya Pawar</title>
 
     <style>
-
         body{
             background-color:#000000;
             color:#f9fafb;
             font-family:Segoe UI, Arial, sans-serif;
             text-align:center;
-            padding-top:0px;
+            padding-top:20px;
+            margin:0;
         }
 
         h1{
             font-size:52px;
-            margin-top:5px;
-            margin-bottom:5px;
+            margin-top:20px;
+            margin-bottom:10px;
             color:#ffffff;
         }
 
@@ -28,102 +28,84 @@
             margin-bottom:5px;
         }
 
-        h3{
-            color:#9ca3af;
-            font-weight:300;
-            margin-top:5px;
-            margin-bottom:5px;
-        }
-
         p{
             font-size:18px;
             color:#e5e7eb;
-            margin-top:5px;
-            margin-bottom:5px;
+            margin-top:10px;
+            margin-bottom:10px;
+            line-height:1.6;
         }
-        button{
 
-            background-color:#ffffff;
+        .hero-buttons{
+            margin-top:25px;
+            margin-bottom:35px;
+        }
+
+        .hero-buttons a{
+            text-decoration:none;
+        }
+
+        .hero-buttons button{
+            background:linear-gradient(135deg, #ffffff, #d1d5db);
             color:#000000;
-
-            border:none;
-
-            padding:12px 24px;
-
+            border:1px solid #e5e7eb;
+            padding:12px 22px;
             margin:10px;
-
-            border-radius:8px;
-
-            font-size:16px;
-
+            border-radius:10px;
+            font-size:15px;
+            font-weight:600;
             cursor:pointer;
-
+            transition:all 0.3s ease;
+            box-shadow:0 6px 18px rgba(255,255,255,0.18);
         }
+
+        .hero-buttons button:hover{
+            background:linear-gradient(135deg, #ffffff, #d1d5db);
+            color:#000000;
+            transform:translateY(-2px);
+            box-shadow:0 8px 20px rgba(255,255,255,0.22);
+        }
+
         .section-title{
             font-weight:550;
             color:#ffffff;
         }
 
         .tech-stack{
-
-            margin-top:15px;
-            margin-bottom:15px;
-
+            margin-top:20px;
+            margin-bottom:20px;
         }
 
         .tech{
-
             display:inline-block;
-
             background-color:#1f2937;
-
             color:#f9fafb;
-
             padding:10px 20px;
-
             margin:8px;
-
             border-radius:20px;
-
             font-size:16px;
-
         }
         
         .scroll-container{
-
             overflow:hidden;
-
             width:100%;
-
-            margin-top:5px;
-
-           
-
+            margin-top:10px;
         }
 
         .certificates{
-
             display:flex;
-
             gap:20px;
-
             animation:scroll 20s linear infinite;
-
         }
+
         .certificates img{
-
             width:250px;
-
             height:auto;
-
             margin:10px;
-
             border-radius:10px;
+        }
 
-    }
-
-         @keyframes scroll{
-
+        @keyframes scroll{
             0%{
                 transform:translateX(0);
             }
@@ -131,37 +113,44 @@
             100%{
                 transform:translateX(-50%);
             }
-
-    }
+        }
     </style>
 
 </head>
 
-<body>
-
-    <br>
+<body> 
 
     <h1>Ajinkya Pawar</h1>
 
-    <h2>Data Engineering | Data Scientist | AI ML Solutions</h2>
-
-    <br>
-
-    <h3>C-DAC Alumnus | Shivaji University Alumnus</h3>
-
-    <br>
-
     <p>
-        Building AI-powered Solutions, Machine Learning Models, Statistical Solutions
-        and Data Engineering Pipelines.
+        AI ML Solutions | Data Scientist 
     </p>
 
-    <br>
+    <p>
+        Building AI-powered Solutions, Machine Learning Models, Statistical Solutions and Data Engineering Pipelines. 
+    </p>
 
+
+    <div class="hero-buttons">
+        <a href="projects.html">
+            <button>Projects</button>
+        </a>
+
+        <a href="study-notes.html">
+            <button>Study Articles / Notes</button>
+        </a>
+
+        <a href="https://www.linkedin.com/in/ajinkyamspawar/" target="_blank">
+            <button>LinkedIn</button>
+        </a>
+
+        <a href="contact-me.html">
+            <button>Contact Me</button>
+        </a>
+    </div>
 
     <div class="tech-stack">
-
-        <h2 class="section-title">Technologies</h2>
+        <h2 class="section-title">Skill Set</h2>
 
         <br>
 
@@ -173,17 +162,15 @@
         <span class="tech">Machine Learning</span>
         <span class="tech">Power BI</span>
         <span class="tech">Git</span>
-
     </div>
 
     <br>
 
-    <h2 class="section-title"> Certifications </h2>
+    <h2 class="section-title">Certifications</h2>
 
     <br>
 
     <div class="scroll-container">
-
         <div class="certificates">
 
             <img src="certificates/CRM.png">
@@ -205,9 +192,7 @@
             <img src="certificates/Oracel_Fundamentals.png">
 
         </div>
-
-</div>
+    </div>
 
 </body>
-
 </html>
