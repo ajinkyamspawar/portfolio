@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Me | Ajinkya Pawar</title>
+
+    <style>
+        body{
+            background-color:#000000;
+            color:#f9fafb;
+            font-family:Segoe UI, Arial, sans-serif;
+            margin:0;
+            padding:0;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .contact-page{
+            width:100%;
+            max-width:720px;
+            padding:25px;
+            box-sizing:border-box;
+        }
+
+        h1{
+            font-size:38px;
+            color:#ffffff;
+            margin-top:0;
+            margin-bottom:8px;
+            text-align:center;
+        }
+
+        .contact-subtext{
+            color:#d1d5db;
+            font-size:15px;
+            line-height:1.5;
+            margin-bottom:22px;
+            text-align:center;
+        }
+
+        .contact-form{
+            background-color:#111827;
+            border:1px solid #1f2937;
+            border-radius:16px;
+            padding:24px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.35);
+        }
+
+        .contact-form label{
+            display:block;
+            margin-bottom:8px;
+            color:#ffffff;
+            font-weight:600;
+            font-size:15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea{
+            width:100%;
+            padding:13px;
+            margin-bottom:16px;
+            border-radius:10px;
+            border:1px solid #374151;
+            background-color:#0f172a;
+            color:#f9fafb;
+            font-size:15px;
+            box-sizing:border-box;
+            outline:none;
+        }
+
+        .contact-form textarea{
+            min-height:110px;
+            resize:none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus{
+            border:1px solid #9ca3af;
+        }
+
+        .contact-actions{
+            display:flex;
+            justify-content:center;
+            margin-top:10px;
+        }
+
+        .back-home-wrapper{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .submit-btn{
+            background:linear-gradient(135deg, #ffffff, #d1d5db);
+            color:#000000;
+            border:1px solid #e5e7eb;
+            padding:12px 22px;
+            border-radius:10px;
+            font-size:15px;
+            font-weight:600;
+            cursor:pointer;
+            transition:all 0.3s ease;
+            box-shadow:0 6px 18px rgba(255,255,255,0.18);
+        }
+
+        .submit-btn:hover{
+            transform:translateY(-2px);
+            box-shadow:0 8px 20px rgba(255,255,255,0.22);
+        }
+
+        .back-home{
+            text-decoration:none;
+        }
+
+        .back-home button{
+            background-color:transparent;
+            color:#ffffff;
+            border:1px solid #374151;
+            padding:12px 22px;
+            border-radius:10px;
+            font-size:15px;
+            cursor:pointer;
+        }
+
+        .back-home button:hover{
+            background-color:#111827;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contact-page">
+        <h1>Contact Me</h1>
+
+        <p class="contact-subtext">
+            Feel free to send a message.
+        </p>
+
+        <form class="contact-form" action="https://formspree.io/f/xpqgzlgr" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+            <div class="contact-actions">
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </div>
+        </form>
+
+        <div class = "back-home-wrapper">
+                <a href="index.html" class="back-home">
+                    <button type="button">Back to Home</button>
+                </a>
+        </div>
+    
+    </div>
+
+</body>
+</html>

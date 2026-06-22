@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Articles | Ajinkya Pawar</title>
+
+    <style>
+        body{
+            margin:0;
+            background-color:#000000;
+            color:#f9fafb;
+            font-family:Segoe UI, Arial, sans-serif;
+        }
+
+        .articles-page{
+            max-width:1400px;
+            margin:0 auto;
+            padding:40px 30px 60px 30px;
+        }
+
+        .articles-header{
+            text-align:center;
+            margin-bottom:35px;
+        }
+
+        .articles-header h1{
+            font-size:46px;
+            color:#ffffff;
+            margin-bottom:10px;
+        }
+
+        .articles-header p{
+            color:#d1d5db;
+            font-size:17px;
+            margin:0;
+        }
+
+        .articles-layout{
+            display:flex;
+            gap:30px;
+            align-items:flex-start;
+        }
+
+        .articles-sidebar{
+            width:280px;
+            position:sticky;
+            top:25px;
+            align-self:flex-start;
+            background-color:#111827;
+            border:1px solid #1f2937;
+            border-radius:16px;
+            padding:22px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+            max-height:calc(100vh - 50px);
+            overflow-y:auto;
+            scrollbar-width:thin;
+        }
+
+        .articles-sidebar h2{
+            font-size:22px;
+            color:#ffffff;
+            margin-top:0;
+            margin-bottom:18px;
+        }
+
+        .articles-sidebar ul{
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+
+        .articles-sidebar li{
+            margin-bottom:14px;
+        }
+
+        .articles-sidebar a{
+            text-decoration:none;
+            color:#d1d5db;
+            font-size:15px;
+            line-height:1.5;
+            display:block;
+            padding:10px 12px;
+            border-radius:10px;
+            transition:0.3s ease;
+        }
+
+        .articles-sidebar a:hover{
+            background-color:#1f2937;
+            color:#ffffff;
+        }
+
+        .articles-content{
+            flex:1;
+            min-width:0;
+        }
+
+        .article-card{
+            background-color:#111827;
+            border:1px solid #1f2937;
+            border-radius:18px;
+            padding:28px;
+            margin-bottom:28px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.35);
+        }
+
+        .article-card h2{
+            font-size:30px;
+            color:#ffffff;
+            margin-top:0;
+            margin-bottom:14px;
+        }
+
+        .article-card h3{
+            font-size:20px;
+            color:#ffffff;
+            margin-top:28px;
+            margin-bottom:12px;
+        }
+
+        .article-card p{
+            color:#d1d5db;
+            font-size:16px;
+            line-height:1.8;
+            margin-bottom:16px;
+        }
+
+        .article-card ul{
+            color:#d1d5db;
+            padding-left:22px;
+            line-height:1.8;
+            margin-bottom:16px;
+        }
+
+        .article-card li{
+            margin-bottom:8px;
+        }
+
+        .article-image{
+            width:100%;
+            max-width:720px;
+            display:block;
+            margin:18px auto 22px auto;
+            border-radius:14px;
+            border:1px solid #1f2937;
+        }
+
+                .articles-sidebar::-webkit-scrollbar{
+            width:8px;
+        }
+
+        .articles-sidebar::-webkit-scrollbar-track{
+            background:#0f172a;
+            border-radius:10px;
+        }
+
+        .articles-sidebar::-webkit-scrollbar-thumb{
+            background:#374151;
+            border-radius:10px;
+        }
+
+        .article-card{
+            scroll-margin-top:25px;
+        }
+
+        .source-box{
+            margin-top:24px;
+            padding:16px 18px;
+            background-color:#0f172a;
+            border:1px solid #1f2937;
+            border-radius:12px;
+        }
+
+        .source-box h4{
+            margin:0 0 10px 0;
+            color:#ffffff;
+            font-size:16px;
+        }
+
+        .source-box p{
+            margin:0 0 8px 0;
+            font-size:14px;
+            color:#d1d5db;
+            line-height:1.7;
+        }
+
+        .source-box a{
+            color:#93c5fd;
+            text-decoration:none;
+        }
+
+        .source-box a:hover{
+            text-decoration:underline;
+        }
+
+        .back-home{
+            text-align:center;
+            margin-top:40px;
+        }
+
+        .back-home a{
+            text-decoration:none;
+        }
+
+        .back-home button{
+            background-color:transparent;
+            color:#ffffff;
+            border:1px solid #374151;
+            padding:12px 22px;
+            border-radius:10px;
+            font-size:15px;
+            cursor:pointer;
+        }
+
+        .back-home button:hover{
+            background-color:#111827;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        @media (max-width: 1000px){
+            .articles-layout{
+                flex-direction:column;
+            }
+
+            .articles-sidebar{
+                width:100%;
+                position:static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="articles-page">
+
+        <div class="articles-header">
+            <h1>Articles</h1>
+            <p>Concept notes and practical machine learning / data engineering articles.</p>
+        </div>
+
+        <div class="articles-layout">
+
+            <!-- LEFT INDEX -->
+            <aside class="articles-sidebar">
+                <h2>Article Index</h2>
+
+                <ul>
+                    <li><a href="#article1">1. Regression vs Classification</a></li>
+                    <li><a href="#article2">2. Precision, Recall and F1 Score</a></li>
+                    <li><a href="#article3">3. ETL vs ELT in Data Engineering</a></li>
+
+                    
+
+                </ul>
+            </aside>
+
+            <!-- RIGHT CONTENT -->
+            <div class="articles-content">
+
+                <!-- ARTICLE 1 -->
+                <section id="article1" class="article-card">
+                    <h2>Regression vs Classification</h2>
+
+                    <p>
+                        Regression and classification are two foundational types of supervised machine learning problems.
+                        In both cases, a model learns patterns from labeled historical data, but the type of output
+                        predicted by the model is different.
+                    </p>
+
+                    <h3>What is Regression?</h3>
+                    <p>
+                        Regression is used when the target variable is continuous in nature. In simple words, the model
+                        predicts a numeric value rather than a category. Examples include predicting house prices,
+                        monthly sales, insurance claim amount, temperature, or employee salary.
+                    </p>
+
+                    <p>
+                        A regression model tries to estimate the relationship between input features and a continuous
+                        output. For example, if we are predicting house price, the model may learn from variables such
+                        as area, location, number of rooms, and age of the property.
+                    </p>
+
+                    <h3>What is Classification?</h3>
+                    <p>
+                        Classification is used when the target variable belongs to a category or class. Instead of
+                        predicting a number, the model predicts a label such as Yes/No, Fraud/Not Fraud,
+                        Spam/Not Spam, or Attrition/No Attrition.
+                    </p>
+
+                    <p>
+                        For example, in an employee attrition use case, the model may predict whether an employee is
+                        likely to leave the company. In a medical setting, a classification model may predict whether
+                        a patient is high-risk or low-risk based on available health indicators.
+                    </p>
+
+                    <h3>Simple Difference</h3>
+                    <ul>
+                        <li><strong>Regression:</strong> predicts a continuous numeric value.</li>
+                        <li><strong>Classification:</strong> predicts a discrete category or class label.</li>
+                    </ul>
+
+                    <h3>Examples</h3>
+                    <ul>
+                        <li><strong>Regression:</strong> Predict sales revenue for next month.</li>
+                        <li><strong>Regression:</strong> Predict house price.</li>
+                        <li><strong>Classification:</strong> Predict whether a customer will churn.</li>
+                        <li><strong>Classification:</strong> Predict whether an email is spam.</li>
+                    </ul>
+
+                    <p>
+                        Choosing the correct problem type is important because it affects model selection,
+                        evaluation metrics, and business interpretation of the result.
+                    </p>
+
+                    <div class="source-box">
+                        <h4>Source</h4>
+                        <p>
+                            IBM overview on classification vs regression:
+                            <a href="https://www.ibm.com/think/topics/classification-vs-regression" target="_blank">
+                                https://www.ibm.com/think/topics/classification-vs-regression
+                            </a>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ARTICLE 2 -->
+                <section id="article2" class="article-card">
+                    <h2>Precision, Recall and F1 Score</h2>
+
+                    <p>
+                        Accuracy alone is often not enough to evaluate a classification model, especially when the data
+                        is imbalanced. In many business problems, the cost of false positives and false negatives is
+                        different, which is why precision, recall and F1 score become important.
+                    </p>
+
+                    <h3>Precision</h3>
+                    <p>
+                        Precision answers the question:
+                        <strong>Out of all records predicted as positive, how many were actually positive?</strong>
+                    </p>
+
+                    <p>
+                        Precision becomes important when false positives are costly. For example, if a fraud model marks
+                        too many genuine transactions as fraud, customer experience suffers. In such cases, we care about
+                        making sure predicted positives are truly positive as often as possible.
+                    </p>
+
+                    <h3>Recall</h3>
+                    <p>
+                        Recall answers the question:
+                        <strong>Out of all actual positive records, how many did the model correctly identify?</strong>
+                    </p>
+
+                    <p>
+                        Recall is important when missing a true positive is expensive. For example, in disease detection,
+                        failing to identify an actual positive case can be more dangerous than incorrectly flagging a few
+                        extra cases.
+                    </p>
+
+                    <h3>F1 Score</h3>
+                    <p>
+                        F1 score combines precision and recall into a single measure. It is useful when you want a balance
+                        between the two rather than optimizing only one side.
+                    </p>
+
+                    <p>
+                        In practice, the “best” metric depends on business context:
+                    </p>
+
+                    <ul>
+                        <li><strong>High Precision preferred:</strong> when false alarms are expensive.</li>
+                        <li><strong>High Recall preferred:</strong> when missing a true case is risky.</li>
+                        <li><strong>F1 preferred:</strong> when you need a balance between precision and recall.</li>
+                    </ul>
+
+                    <p>
+                        Example: In employee attrition prediction, if the goal is to identify most at-risk employees,
+                        recall may matter more. But if HR interventions are expensive and should only target highly likely
+                        leavers, precision becomes more important.
+                    </p>
+
+                    <div class="source-box">
+                        <h4>Source</h4>
+                        <p>
+                            IBM overview on classification metrics:
+                            <a href="https://www.ibm.com/think/topics/classification-models" target="_blank">
+                                https://www.ibm.com/think/topics/classification-models
+                            </a>
+                        </p>
+                        <p>
+                            IBM Scikit-learn metrics overview:
+                            <a href="https://www.ibm.com/think/topics/scikit-learn" target="_blank">
+                                https://www.ibm.com/think/topics/scikit-learn
+                            </a>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ARTICLE 3 -->
+                <section id="article3" class="article-card">
+                    <h2>ETL vs ELT in Data Engineering</h2>
+
+                    <p>
+                        ETL and ELT are two common patterns used to move and prepare data for analytics, reporting,
+                        and machine learning systems. Both involve extracting data from source systems and loading it
+                        into a target environment, but the order of transformation differs.
+                    </p>
+
+                    <h3>ETL: Extract, Transform, Load</h3>
+                    <p>
+                        In ETL, data is first extracted from source systems, then transformed into the required format,
+                        and only after that loaded into the destination system such as a data warehouse.
+                    </p>
+
+                    <p>
+                        This approach is useful when strong data cleaning, formatting, business rules, or schema
+                        transformations must happen before the data is stored in the final analytics environment.
+                    </p>
+
+                    <h3>ELT: Extract, Load, Transform</h3>
+                    <p>
+                        In ELT, raw data is first extracted and loaded into the target platform, and transformation
+                        happens later inside that platform. This is common in modern cloud data environments where
+                        warehouses and lakehouse systems are powerful enough to perform transformations efficiently.
+                    </p>
+
+                    <h3>Key Difference</h3>
+                    <ul>
+                        <li><strong>ETL:</strong> transform first, then load.</li>
+                        <li><strong>ELT:</strong> load first, then transform.</li>
+                    </ul>
+
+                    <h3>When ETL is useful</h3>
+                    <ul>
+                        <li>When data must be standardized before entering the warehouse.</li>
+                        <li>When the target system should only store curated data.</li>
+                        <li>When business rules must be applied before loading.</li>
+                    </ul>
+
+                    <h3>When ELT is useful</h3>
+                    <ul>
+                        <li>When working with modern cloud warehouses / lakehouses.</li>
+                        <li>When you want to retain raw historical data.</li>
+                        <li>When transformation logic may evolve over time and should stay flexible.</li>
+                    </ul>
+
+                    <p>
+                        In modern data engineering, ELT is often preferred for scalability and flexibility, especially
+                        with platforms such as Snowflake, BigQuery, Azure Synapse, or Databricks. However, ETL still
+                        remains highly relevant depending on governance, architecture, and business constraints.
+                    </p>
+
+                    <div class="source-box">
+                        <h4>Source</h4>
+                        <p>
+                            This section is written as a simplified conceptual article for your portfolio structure.
+                            Later, when you finalize your own ETL/ELT article, we can replace it with your custom content
+                            and exact source references.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html">
+                <button>Back to Home</button>
+            </a>
+        </div>
+
+    </div>
+<script>
+    const sidebarLinks = document.querySelectorAll('.articles-sidebar a');
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            setTimeout(() => {
+                this.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+            }, 200);
+        });
+    });
+</script>
+</body>
+</html>
