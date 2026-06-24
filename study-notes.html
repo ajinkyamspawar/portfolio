@@ -3,6 +3,7 @@
 
 <head>
     <title>Articles | Ajinkya Pawar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body{
@@ -12,10 +13,15 @@
             font-family:Segoe UI, Arial, sans-serif;
         }
 
+        html{
+            scroll-behavior:smooth;
+        }
+
         .articles-page{
             max-width:1400px;
             margin:0 auto;
             padding:40px 30px 60px 30px;
+            box-sizing:border-box;
         }
 
         .articles-header{
@@ -51,7 +57,6 @@
             border-radius:16px;
             padding:22px;
             box-shadow:0 10px 30px rgba(0,0,0,0.35);
-
             max-height:calc(100vh - 50px);
             overflow-y:auto;
             scrollbar-width:thin;
@@ -71,23 +76,47 @@
         }
 
         .articles-sidebar li{
-            margin-bottom:14px;
+            margin-bottom:12px;
         }
 
-        .articles-sidebar a{
-            text-decoration:none;
+        .articles-sidebar button{
+            width:100%;
+            text-align:left;
+            background-color:transparent;
+            border:none;
             color:#d1d5db;
             font-size:15px;
             line-height:1.5;
-            display:block;
-            padding:10px 12px;
+            padding:12px 14px;
             border-radius:10px;
+            cursor:pointer;
             transition:0.3s ease;
+            font-family:inherit;
         }
 
-        .articles-sidebar a:hover{
+        .articles-sidebar button:hover{
             background-color:#1f2937;
             color:#ffffff;
+        }
+
+        .articles-sidebar button.active{
+            background-color:#1f2937;
+            color:#ffffff;
+            border:1px solid #374151;
+        }
+
+                .index-toggle{
+            display:none;
+            width:100%;
+            margin-bottom:14px;
+            background-color:#0f172a;
+            color:#ffffff;
+            border:1px solid #374151;
+            border-radius:10px;
+            padding:12px 14px;
+            font-size:14px;
+            cursor:pointer;
+            font-family:inherit;
         }
 
         .articles-content{
@@ -96,12 +125,16 @@
         }
 
         .article-card{
+            display:none;
             background-color:#111827;
             border:1px solid #1f2937;
             border-radius:18px;
             padding:28px;
-            margin-bottom:28px;
             box-shadow:0 10px 30px rgba(0,0,0,0.35);
+        }
+
+        .article-card.active{
+            display:block;
         }
 
         .article-card h2{
@@ -145,24 +178,6 @@
             border:1px solid #1f2937;
         }
 
-                .articles-sidebar::-webkit-scrollbar{
-            width:8px;
-        }
-
-        .articles-sidebar::-webkit-scrollbar-track{
-            background:#0f172a;
-            border-radius:10px;
-        }
-
-        .articles-sidebar::-webkit-scrollbar-thumb{
-            background:#374151;
-            border-radius:10px;
-        }
-
-        .article-card{
-            scroll-margin-top:25px;
-        }
-
         .source-box{
             margin-top:24px;
             padding:16px 18px;
@@ -187,6 +202,7 @@
         .source-box a{
             color:#93c5fd;
             text-decoration:none;
+            word-break:break-word;
         }
 
         .source-box a:hover{
@@ -216,8 +232,18 @@
             background-color:#111827;
         }
 
-        html{
-            scroll-behavior:smooth;
+        .articles-sidebar::-webkit-scrollbar{
+            width:8px;
+        }
+
+        .articles-sidebar::-webkit-scrollbar-track{
+            background:#0f172a;
+            border-radius:10px;
+        }
+
+        .articles-sidebar::-webkit-scrollbar-thumb{
+            background:#374151;
+            border-radius:10px;
         }
 
         @media (max-width: 1000px){
@@ -228,7 +254,96 @@
             .articles-sidebar{
                 width:100%;
                 position:static;
+                max-height:320px;
             }
+        }
+
+        @media (max-width: 768px){
+            .articles-page{
+                padding:25px 15px 40px 15px;
+            }
+
+            .articles-header h1{
+                font-size:34px;
+            }
+
+            .articles-header p{
+                font-size:15px;
+                line-height:1.6;
+            }
+
+            .articles-layout{
+                gap:18px;
+            }
+
+            .articles-sidebar{
+                width:100%;
+                padding:16px;
+                border-radius:14px;
+                max-height:260px;
+            }
+
+               .index-toggle{
+                display:block;
+            }
+
+            .articles-sidebar ul{
+                display:none;
+            }
+
+            .articles-sidebar.open ul{
+                display:block;
+            }
+
+            .articles-sidebar h2{
+                font-size:20px;
+                margin-bottom:14px;
+            }
+
+            .articles-sidebar button{
+                font-size:14px;
+                padding:10px 12px;
+            }
+
+            .article-card{
+                padding:18px;
+                border-radius:14px;
+            }
+
+            .article-card h2{
+                font-size:24px;
+                line-height:1.4;
+            }
+
+            .article-card h3{
+                font-size:18px;
+                line-height:1.4;
+            }
+
+            .article-card p,
+            .article-card ul{
+                font-size:15px;
+                line-height:1.75;
+            }
+
+            .source-box{
+                padding:14px;
+            }
+
+            .source-box h4{
+                font-size:15px;
+            }
+
+            .source-box p{
+                font-size:13px;
+            }
+
+            .back-home button{
+                font-size:14px;
+                padding:11px 18px;
+            }
+
+         
         }
     </style>
 </head>
@@ -247,19 +362,125 @@
             <!-- LEFT INDEX -->
             <aside class="articles-sidebar">
                 <h2>Article Index</h2>
-
+                <button class="index-toggle" id="indexToggle">Show / Hide Index</button>
                 <ul>
-                    <li><a href="#article1">1. Regression vs Classification</a></li>
-                    <li><a href="#article2">2. Precision, Recall and F1 Score</a></li>
-                    <li><a href="#article3">3. ETL vs ELT in Data Engineering</a></li>
-
-                    
-
+                    <li>
+                        <button class="article-tab" data-article="article4">
+                            4. What is Data Science?
+                        </button>
+                    </li>
+                    <li>
+                        <button class="article-tab" data-article="article3">
+                            3. ETL vs ELT in Data Engineering
+                        </button>
+                    </li>
+                    <li>
+                        <button class="article-tab" data-article="article2">
+                            2. Precision, Recall and F1 Score
+                        </button>
+                    </li>
+                    <li>
+                        <button class="article-tab" data-article="article1">
+                            1. Regression vs Classification
+                        </button>
+                    </li>
                 </ul>
             </aside>
 
             <!-- RIGHT CONTENT -->
             <div class="articles-content">
+
+                <!-- ARTICLE 4 : DEFAULT LATEST -->
+                <section id="article4" class="article-card active">
+                    <h2>What is Data Science?</h2>
+
+                    <p>
+                        Data Science is an interdisciplinary field that uses data, statistics, programming,
+                        domain understanding, and machine learning techniques to extract insights and support
+                        better decision-making. In simple words, data science helps transform raw data into
+                        meaningful information that can be used to solve business problems, identify patterns,
+                        automate decisions, and build intelligent systems.
+                    </p>
+                    
+                    <h3>Why Data Science Matters</h3>
+                    <p>
+                        Modern organizations generate data from websites, mobile applications, transactions,
+                        sensors, customer interactions, and internal systems. However, raw data alone has little
+                        value unless it is cleaned, analyzed, and interpreted correctly. This is where data science
+                        becomes important. It helps businesses understand customer behavior, optimize operations,
+                        forecast future trends, detect anomalies, and improve products or services.
+                    </p>
+
+                    <h3>Core Areas of Data Science</h3>
+                    <ul>
+                        <li><strong>Data Collection:</strong> Gathering data from databases, APIs, files, applications, and external systems.</li>
+                        <li><strong>Data Cleaning:</strong> Handling missing values, inconsistencies, duplicates, and formatting issues.</li>
+                        <li><strong>Exploratory Data Analysis:</strong> Understanding patterns, distributions, trends, and relationships in data.</li>
+                        <li><strong>Statistical Analysis:</strong> Using statistical methods to validate assumptions and interpret patterns.</li>
+                        <li><strong>Machine Learning:</strong> Building models for prediction, classification, recommendation, or clustering.</li>
+                        <li><strong>Visualization & Communication:</strong> Presenting insights through dashboards, reports, and storytelling.</li>
+                    </ul>
+                    <img src="project_images/datascience_1.png" alt="Data Science Overview" class="article-image">
+                    
+                    <h3>Typical Data Science Workflow</h3>
+                    <p>
+                        A data science project usually begins with understanding the business problem. Then the
+                        required data is collected, cleaned, and explored. Based on the objective, a model or
+                        analytical approach is selected. The results are evaluated and finally communicated to
+                        stakeholders or deployed into a production system.
+                    </p>
+
+                    <ul>
+                        <li>Define business problem</li>
+                        <li>Collect relevant data</li>
+                        <li>Clean and prepare the data</li>
+                        <li>Explore patterns and relationships</li>
+                        <li>Build analytical / ML model</li>
+                        <li>Evaluate results</li>
+                        <li>Deploy or communicate findings</li>
+                    </ul>
+
+                    
+
+                    <h3>Examples of Data Science Use Cases</h3>
+                    <ul>
+                        <li>Predicting employee attrition</li>
+                        <li>Forecasting sales or demand</li>
+                        <li>Detecting fraud in financial transactions</li>
+                        <li>Building recommendation systems</li>
+                        <li>Customer segmentation for targeted marketing</li>
+                        <li>Predictive maintenance in manufacturing</li>
+                    </ul>
+
+                    <h3>Data Science vs Related Fields</h3>
+                    <p>
+                        Data Science overlaps with analytics, machine learning, business intelligence, and data
+                        engineering, but it is not exactly the same as any one of them.
+                    </p>
+                    
+
+                    <ul>
+                        <li><strong>Data Analytics:</strong> Often focuses more on analyzing past data and generating business insights.</li>
+                        <li><strong>Machine Learning:</strong> A subset often used inside data science for predictive modeling.</li>
+                        <li><strong>Data Engineering:</strong> Focuses more on building reliable data pipelines, storage, and processing systems.</li>
+                        <li><strong>Business Intelligence:</strong> Usually emphasizes dashboards, KPIs, and reporting.</li>
+                    </ul>
+                    <img src="project_images/datascience_2.png" alt="Data Science Workflow" class="article-image">
+
+                    <p>
+                        In practice, a data scientist may use concepts from all these areas depending on the problem.
+                    </p>
+
+                    <div class="source-box">
+                        <h4>Source</h4>
+                        <p>
+                            IBM overview on Data Science:
+                            <a href="https://www.ibm.com/think/topics/data-science" target="_blank">
+                                https://www.ibm.com/think/topics/data-science
+                            </a>
+                        </p>
+                    </div>
+                </section>
 
                 <!-- ARTICLE 1 -->
                 <section id="article1" class="article-card">
@@ -391,12 +612,6 @@
                                 https://www.ibm.com/think/topics/classification-models
                             </a>
                         </p>
-                        <p>
-                            IBM Scikit-learn metrics overview:
-                            <a href="https://www.ibm.com/think/topics/scikit-learn" target="_blank">
-                                https://www.ibm.com/think/topics/scikit-learn
-                            </a>
-                        </p>
                     </div>
                 </section>
 
@@ -457,9 +672,10 @@
                     <div class="source-box">
                         <h4>Source</h4>
                         <p>
-                            This section is written as a simplified conceptual article for your portfolio structure.
-                            Later, when you finalize your own ETL/ELT article, we can replace it with your custom content
-                            and exact source references.
+                            IBM overview on ETL:
+                            <a href="https://www.ibm.com/think/topics/etl" target="_blank">
+                                https://www.ibm.com/think/topics/etl
+                            </a>
                         </p>
                     </div>
                 </section>
@@ -474,19 +690,59 @@
         </div>
 
     </div>
-<script>
-    const sidebarLinks = document.querySelectorAll('.articles-sidebar a');
 
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            setTimeout(() => {
-                this.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest'
+    <script>
+        const tabs = document.querySelectorAll('.article-tab');
+        const articles = document.querySelectorAll('.article-card');
+
+        function showArticle(articleId){
+            articles.forEach(article => {
+                article.classList.remove('active');
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            const selectedArticle = document.getElementById(articleId);
+            const selectedTab = document.querySelector(`.article-tab[data-article="${articleId}"]`);
+
+            if(selectedArticle){
+                selectedArticle.classList.add('active');
+            }
+
+            if(selectedTab){
+                selectedTab.classList.add('active');
+                selectedTab.scrollIntoView({
+                    behavior:'smooth',
+                    block:'nearest'
                 });
-            }, 200);
+            }
+
+            if(window.innerWidth <= 1000){
+                window.scrollTo({
+                    top:0,
+                    behavior:'smooth'
+                });
+            }
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function(){
+                const articleId = this.getAttribute('data-article');
+                showArticle(articleId);
+            });
         });
-    });
-</script>
+        const indexToggle = document.getElementById('indexToggle');
+        const sidebar = document.querySelector('.articles-sidebar');
+
+        if(indexToggle){
+            indexToggle.addEventListener('click', function(){
+                sidebar.classList.toggle('open');
+            });
+        }
+        showArticle('article4');
+    </script>
+
 </body>
 </html>
