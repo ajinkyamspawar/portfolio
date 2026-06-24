@@ -3,6 +3,7 @@
 
 <head>
     <title>Contact Me | Ajinkya Pawar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body{
@@ -14,7 +15,7 @@
             min-height:100vh;
             display:flex;
             justify-content:center;
-            align-items:center;
+            align-items:flex-start;
         }
 
         .contact-page{
@@ -126,13 +127,66 @@
         .back-home button:hover{
             background-color:#111827;
         }
+        
+        @media (max-width: 768px){
+
+    body{
+        padding:20px 12px 30px 12px;
+        min-height:auto;
+    }
+
+    .contact-page{
+        max-width:100%;
+        padding:10px 0;
+    }
+
+    h1{
+        font-size:30px;
+        margin-bottom:8px;
+    }
+
+    .contact-subtext{
+        font-size:14px;
+        margin-bottom:18px;
+    }
+
+    .contact-form{
+        padding:18px;
+        border-radius:14px;
+    }
+
+    .contact-form label{
+        font-size:14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        font-size:14px;
+        padding:12px;
+    }
+
+    .contact-form textarea{
+        min-height:100px;
+    }
+
+    .submit-btn{
+        width:100%;
+        font-size:14px;
+        padding:12px 16px;
+    }
+
+    .back-home button{
+        font-size:14px;
+        padding:11px 18px;
+    }
+    }
     </style>
 </head>
 
 <body>
 
     <div class="contact-page">
-        <h1>Contact Me</h1>
+        <h1>Let's Connect</h1>
 
         <p class="contact-subtext">
             Feel free to send a message
@@ -149,7 +203,7 @@
             <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
 
             <div class="contact-actions">
-                <button type="submit" class="submit-btn">Send Inquiry</button>
+                <button type="submit" class="submit-btn">Let's Connect</button>
             </div>
         </form>
 
