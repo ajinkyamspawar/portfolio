@@ -65,6 +65,10 @@
             flex-direction:column;
         }
 
+        .clickable-card{
+            cursor:pointer;
+        }
+
         .project-card:hover{
             transform:translateY(-6px);
             box-shadow:0 14px 35px rgba(255,255,255,0.08);
@@ -229,7 +233,7 @@
         <div class="projects-row">
 
             <!-- Project 1 -->
-            <div class="project-card">
+            <div class="project-card clickable-card" data-link="https://sports-person-image-classifier.streamlit.app/">
                 <img src="project_images/sports_person_ss.png" alt="Sports Person Image Classification">
 
                 <div class="project-content">
@@ -253,7 +257,7 @@
 
             <!-- Project 2 -->
             <!-- Project 2 -->
-            <div class="project-card">
+            <div class="project-card clickable-card" data-link="https://predicting-attrition.streamlit.app/">
                 <img src="project_images/Attrition_HomePage.png" alt="Employee Attrition Prediction">
 
                 <div class="project-content">
@@ -338,6 +342,21 @@
         </div>
 
     </div>
+<script>
+    const clickableCards = document.querySelectorAll('.clickable-card');
 
+    clickableCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('a') || e.target.closest('button')) {
+                return;
+            }
+
+            const link = this.getAttribute('data-link');
+            if (link) {
+                window.open(link, '_blank');
+            }
+        });
+    });
+</script>
 </body>
 </html>

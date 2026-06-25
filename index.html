@@ -73,18 +73,43 @@
         }
 
         .tech-stack{
-            margin-top:20px;
-            margin-bottom:20px;
+                margin-top:20px;
+                margin-bottom:20px;
+            }
+
+        .skills-wrapper{
+            max-width:1100px;
+            margin:14px auto 0 auto;
+            line-height:2.1;
         }
 
         .tech{
             display:inline-block;
             background-color:#1f2937;
             color:#f9fafb;
-            padding:10px 20px;
-            margin:8px;
-            border-radius:20px;
+            padding:6px 12px;
+            margin:4px;
+            border-radius:10px;
+            font-size:14px;
+            
+        }
+        .skills-group{
+            max-width:1100px;
+            margin:14px auto;
+        }
+
+        .skills-subtitle{
+            color:#d1d5db;
             font-size:16px;
+            font-weight:500;
+            margin-bottom:8px;
+            margin-top:10px;
+        }
+
+        .skills-wrapper{
+            max-width:1100px;
+            margin:0 auto;
+            line-height:1.8;
         }
         
         .scroll-container{
@@ -95,15 +120,31 @@
 
         .certificates{
             display:flex;
-            gap:20px;
-            animation:scroll 20s linear infinite;
+            gap:22px;
+            width:max-content;
+            animation:scroll 28s linear infinite;
+            align-items:flex-start;
         }
 
-        .certificates img{
+        .certificate-card{
             width:250px;
+            flex:0 0 auto;
+            text-align:center;
+        }
+
+        .certificate-card img{
+            width:100%;
             height:auto;
-            margin:10px;
             border-radius:10px;
+            display:block;
+        }
+
+        .certificate-title{
+            font-size:14px;
+            color:#d1d5db;
+            margin-top:10px;
+            line-height:1.4;
+            font-weight:500;
         }
 
         @keyframes scroll{
@@ -137,7 +178,7 @@
         font-size:14px;
     }
 
-        h1{
+    h1{
         font-size:42px;
         margin-top:10px;
     }
@@ -158,15 +199,36 @@
     }
 
     .tech{
-        font-size:14px;
-        padding:8px 16px;
-        margin:6px;
+        font-size:13px;
+        padding:6px 12px;
+        margin:4px;
     }
 
-    .certificates img{
-    width:170px;
+    .skills-subtitle{
+        font-size:16px;
+        line-height:1.4;
     }
+
+        .certificate-card{
+        width:170px;
+    }
+
+.certificate-title{
+    font-size:12px;
+    margin-top:8px;
 }
+    .skill-line{
+        line-height:2;
+        margin:10px auto;
+    }
+
+    .skill-label{
+        display:block;
+        margin-bottom:6px;
+        font-size:15px;
+        
+    }
+    }
     </style>
 
 
@@ -206,47 +268,131 @@
     <div class="tech-stack">
         <h2 class="section-title">Skill Set</h2>
 
-        <br>
+        <div class="skills-group">
+            <div class="skills-subtitle"><h3>AI / ML / GenAI</h3></div>
+            <div class="skills-wrapper">
+                <span class="tech">Machine Learning</span>
+                <span class="tech">LLM</span>
+                <span class="tech">GenAI</span>
+                <span class="tech">Prompt Engineering</span>
+                <span class="tech">LangChain</span>
+                <span class="tech">LangGraph</span>
+                <span class="tech">Agentic AI</span>
+                <span class="tech">CrewAI</span>
+                <span class="tech">Codex</span> 
+            </div>
+            
+        </div>
 
-        <span class="tech">Python</span>
-        <span class="tech">SQL</span>
-        <span class="tech">PySpark</span>
-        <span class="tech">Azure</span>
-        <span class="tech">Databricks</span>
-        <span class="tech">Machine Learning</span>
-        <span class="tech">Power BI</span>
-        <span class="tech">Git</span>
-    </div>
-
-    <br>
-
-    <h2 class="section-title">Certifications</h2>
-
-    <br>
-
-    <div class="scroll-container">
-        <div class="certificates">
-
-            <img src="certificates/CRM.png">
-            <img src="certificates/GenAIinHR.png">
-            <img src="certificates/GenAIwithLLM.png">
-            <img src="certificates/IntroToGenAI.png">
-            <img src="certificates/Oracel_Fundamentals.png">
-
-            <img src="certificates/CRM.png">
-            <img src="certificates/GenAIinHR.png">
-            <img src="certificates/GenAIwithLLM.png">
-            <img src="certificates/IntroToGenAI.png">
-            <img src="certificates/Oracel_Fundamentals.png">
-
-            <img src="certificates/CRM.png">
-            <img src="certificates/GenAIinHR.png">
-            <img src="certificates/GenAIwithLLM.png">
-            <img src="certificates/IntroToGenAI.png">
-            <img src="certificates/Oracel_Fundamentals.png">
-
+        <div class="skills-group">
+            <div class="skills-subtitle"><h3>Development</h3></div>
+            <div class="skills-wrapper">
+                <span class="tech">Python</span>
+                <span class="tech">SQL / NoSQL</span>
+                <span class="tech">HTML / CSS / JS</span>
+                <span class="tech">GitHub</span>
+                <span class="tech">Docker</span>
+                <span class="tech">FastAPI</span>
+                <span class="tech">Streamlit</span>
+                <span class="tech">PySpark</span>
+                <span class="tech">Databricks</span>
+                <span class="tech">OCI / Azure / AWS</span>
+                <span class="tech">Power BI</span>
+            </div>
         </div>
     </div>
+    <br>
+
+<h2 class="section-title">Certifications</h2>
+
+<br>
+
+<div class="scroll-container">
+    <div class="certificates">
+
+        <!-- Set 1 -->
+        <div class="certificate-card">
+            <img src="certificates/CRM.png" alt="Customer Relationship Management Certificate">
+            <p class="certificate-title">Customer Relationship Management</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/GenAIinHR.png" alt="Gen AI in HR Certificate">
+            <p class="certificate-title">Gen AI in HR</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/GenAIwithLLM.png" alt="GenAI with LLM Certificate">
+            <p class="certificate-title">GenAI with LLM</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/IntroToGenAI.png" alt="Gen AI Certificate">
+            <p class="certificate-title">Gen AI</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/Oracel_Fundamentals.png" alt="Oracle Fundamentals Certificate">
+            <p class="certificate-title">Oracle Essentials</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/AI Fundamentals.png" alt="AI Fundamentals Certificate">
+            <p class="certificate-title">CDAC AI Fundamentals</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/Antrhopic_AIFluency.png" alt="AI Fluency Certificate">
+            <p class="certificate-title">Anthropic AI Fluency</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/Docker.png" alt="Docker Certificate">
+            <p class="certificate-title">Docker</p>
+        </div>
+
+        <!-- Set 2 (repeat for smooth infinite scroll) -->
+        <div class="certificate-card">
+            <img src="certificates/CRM.png" alt="Customer Relationship Management Certificate">
+            <p class="certificate-title">Customer Relationship Management</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/GenAIinHR.png" alt="Gen AI in HR Certificate">
+            <p class="certificate-title">Gen AI in HR</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/GenAIwithLLM.png" alt="GenAI with LLM Certificate">
+            <p class="certificate-title">GenAI with LLM</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/IntroToGenAI.png" alt="Gen AI Certificate">
+            <p class="certificate-title">Gen AI</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/Oracel_Fundamentals.png" alt="Oracle Fundamentals Certificate">
+            <p class="certificate-title">Oracle Essentials</p>
+        </div>
+        <div class="certificate-card">
+            <img src="certificates/AI Fundamentals.png" alt="AI Fundamentals Certificate">
+            <p class="certificate-title">CDAC AI Fundamentals</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/Antrhopic_AIFluency.png" alt="AI Fluency Certificate">
+            <p class="certificate-title">Anthropic AI Fluency</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificates/Docker.png" alt="Docker Certificate">
+            <p class="certificate-title">Docker</p>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
